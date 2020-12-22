@@ -62,7 +62,7 @@ function LoginPage(props) {
               }, 3000);
             });
           setSubmitting(false);
-        }, 500);
+        }, 1000);
       }}
     >
       {props => {

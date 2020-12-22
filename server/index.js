@@ -5,10 +5,11 @@ const cookieParser = require("cookie-parser");
 
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
-const config = require("./config/key");
+// const config = require("./config/key");
+const MONGO_URI = require("./config/dev");
 
 const mongoose = require("mongoose");
-const connect = mongoose.connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+const connect = mongoose.connect(MONGO_URI.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
